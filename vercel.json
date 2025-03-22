@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "installCommand": "npm install && pip install -r scripts/requirements.txt",
+  "functions": {
+    "api/execute/route.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  },
+  "env": {
+    "PYTHON_CMD": "python3"
+  }
+}
