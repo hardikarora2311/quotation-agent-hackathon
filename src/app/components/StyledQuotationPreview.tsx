@@ -77,10 +77,7 @@ const StyledQuotationPreview: React.FC<StyledQuotationPreviewProps> = ({
           <h3 className="text-xl font-semibold text-orange-500 mb-3">From</h3>
           <div className="text-gray-700 leading-relaxed">
             <p>{activeQuotation.supplierName}</p>
-            <p>{activeQuotation.supplierGSTIN}</p>
             <p>{activeQuotation.supplierPhone}</p>
-            <p>{activeQuotation.supplierEmail}</p>
-            <p>{activeQuotation.supplierAddress}</p>
           </div>
         </div>
         <div className="w-full md:w-5/12">

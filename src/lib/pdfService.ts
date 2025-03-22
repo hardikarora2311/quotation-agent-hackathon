@@ -380,10 +380,7 @@ export const generateQuotationHTML = (quotation: Quotation): string => {
             <h3>From</h3>
             <div class="party-details">
                 ${quotation.supplierName}<br>
-                ${quotation.supplierGSTIN}<br>
-                ${quotation.supplierPhone}<br>
-                ${quotation.supplierEmail}<br>
-                ${quotation.supplierAddress}
+                ${quotation.supplierPhone}
             </div>
         </div>
         <div class="to">
@@ -391,7 +388,6 @@ export const generateQuotationHTML = (quotation: Quotation): string => {
             <div class="party-details">
                 ${quotation.seekerName}<br>
                 ${quotation.seekerPhone}<br>
-                ${quotation.seekerAddress || ""}
             </div>
         </div>
     </div>

@@ -208,7 +208,7 @@ export default function Chat() {
   const [examples] = useState([
     "Cotton in Delhi",
     "Steel machinery in Mumbai",
-    "Electronics in Bangalore",
+    "Napkins in Bangalore",
     "Spices in Kerala",
     "Leather goods in Kanpur",
   ]);
@@ -677,9 +677,9 @@ export default function Chat() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-gray-700 mb-1  text-left"
                     >
-                      Your Name
+                      Your Name or Company Name
                     </label>
                     <input
                       type="text"
@@ -697,7 +697,7 @@ export default function Chat() {
                   <div>
                     <label
                       htmlFor="mobile"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-gray-700 mb-1 text-left"
                     >
                       Mobile Number
                     </label>
