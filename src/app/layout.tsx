@@ -2,9 +2,8 @@ import "./globals.css";
 import type { ReactNode } from "react";
 
 export const metadata = {
-  title: "FinSource Pro | Enterprise Sourcing Platform",
-  description:
-    "Enterprise-grade product sourcing and supplier management platform",
+  title: "SourceIt | New Suppliers are just a click away",
+  description: " New Suppliers are just a click away",
   keywords: "fintech, sourcing, procurement, suppliers, quotations, enterprise",
   authors: [{ name: "FinSource" }],
 };
@@ -38,11 +37,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   </svg>
                 </div>
                 <div>
-                  <h1 className="text-xl font-bold tracking-tight">
-                    FinSource Pro
-                  </h1>
+                  <h1 className="text-xl font-bold tracking-tight">SourceIt</h1>
                   <p className="text-xs text-indigo-200">
-                    Enterprise Sourcing Platform
+                    New Suppliers are just a click away
                   </p>
                 </div>
               </div>
@@ -58,7 +55,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             {children}
           </main>
 
-          <footer className="bg-white border-t border-gray-200 text-gray-600 py-8">
+          {/* <footer className="bg-white border-t border-gray-200 text-gray-600 py-8">
             <div className="container mx-auto px-4">
               <div className="flex justify-between">
                 <div>
@@ -80,7 +77,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                       </svg>
                     </div>
                     <h3 className="text-lg font-semibold text-indigo-900">
-                      FinSource Pro
+                      SourceIt
                     </h3>
                   </div>
                   <p className="text-sm text-gray-500 mb-4">
@@ -121,7 +118,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
               <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
                 <p className="text-sm text-gray-500">
-                  &copy; {new Date().getFullYear()} FinSource Pro. All rights
+                  &copy; {new Date().getFullYear()} SourceIt. All rights
                   reserved.
                 </p>
                 <div className="mt-4 md:mt-0">
@@ -149,7 +146,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 </div>
               </div>
             </div>
-          </footer>
+          </footer> */}
         </div>
       </body>
     </html>

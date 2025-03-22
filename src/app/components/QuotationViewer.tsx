@@ -131,9 +131,9 @@ const QuotationViewer: React.FC<QuotationViewerProps> = ({ quotations }) => {
                   d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                 />
               </svg>
-              Preview
+              Preview as PDF
             </button>
-            <button
+            {/* <button
               onClick={() => generatePDF(activeQuotation)}
               disabled={isDownloading}
               className="px-4 cursor-pointer py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 disabled:opacity-50"
@@ -181,7 +181,7 @@ const QuotationViewer: React.FC<QuotationViewerProps> = ({ quotations }) => {
                   Download PDF
                 </>
               )}
-            </button>
+            </button> */}
           </div>
         </div>
 

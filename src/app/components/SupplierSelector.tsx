@@ -167,6 +167,7 @@ const SupplierSelector: React.FC<SupplierSelectorProps> = ({
 
       // Prepare API request data
       const userMobile = localStorage.getItem("userMobile") || "9999999999";
+      const userName = localStorage.getItem("userName") || "userName";
 
       // Use the original key "Products" as you've been using
       const productType =
@@ -198,7 +199,7 @@ const SupplierSelector: React.FC<SupplierSelectorProps> = ({
         item_name: productType,
         suppliers: suppliersForAPI,
         seek_gst: "29AAHCN8165F1Z2", // Keeping your original value
-        seek_gst_name: "Example Company", // Keeping your original value
+        seek_gst_name: userName, // Keeping your original value
         seek_item_qty_req: quantity,
         seek_item_del_day_req: deliveryDays,
         seek_delivery_pin: deliveryPincode,
