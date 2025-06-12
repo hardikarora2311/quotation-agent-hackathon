@@ -100,6 +100,50 @@ def get_supplier_gst(item_url):
         
         response = requests.get(item_url, headers=headers, timeout=10)
         soup = BeautifulSoup(response.text, "html.parser")
+
+        # New method: Look for GST in the new HTML structure
+        gst_divs = soup.find_all("div", class_="lh21 pdinb wid3 mb20 verT")
+        for div in gst_divs:
+            spans = div.find_all("span")
+            if len(spans) >= 2 and spans[0].get_text(strip=True) == "GST":
+                return spans[1].get_text(strip=True)
+
+        # Fallback: Try previous methods
+        # Method 1: Find by class
+        gst_section = soup.find("span", class_="fs11 color1")
+        if gst_section:
+            return gst_section.get_text(strip=True)
+        
+        # Method 2: Find by text content containing "GST"
+        gst_elements = soup.find_all(string=lambda text: text and "GST" in text)
+        for element in gst_elements:
+            parent = element.parent
+            if parent:
+                gst_text = parent.get_text(strip=True)
+                if "GST" in gst_text and len(gst_text) < 100:  # Reasonable length for GST info
+                    return gst_text
+        
+        # Method 3: Look for GST format (15 chars alphanumeric)
+        import re
+        text = soup.get_text()
+        gst_match = re.search(r'\b[0-9A-Z]{15}\b', text)
+        if gst_match:
+            return gst_match.group(0)
+        
+        return "N/A"
+    except Exception as e:
+        print(f"Error fetching GST from {item_url}: {e}", file=sys.stderr)
+        return "N/A"
+    """Scrape the supplier's GST number from the product page."""
+    try:
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9"
+        }
+        
+        response = requests.get(item_url, headers=headers, timeout=10)
+        soup = BeautifulSoup(response.text, "html.parser")
         
         # Try multiple ways to find GST information
         gst_section = None
